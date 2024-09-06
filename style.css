@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.move {
+    height: 300px;
+    width: 100px;
+    background-color: aqua;
+}
