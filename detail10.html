@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="row p-3">
+       <div class="col-md-6"> <img src="../IMAGES/pic 18.jpg" alt="wonder" style="width: 100%; height: 97%;"></div>
+       <div class="col-md-6"><h1>BAMBOO FOREST</h1>
+        <div class="col-md-6"><h6>description</h6>
+    <p style="width: 600px;">Bamboo forest in Arashiyama of Kyoto, Japan.Bamboo Forest, Arashiyama Bamboo Grove or Sagano Bamboo Forest, is a natural bamboo forest in Arashiyama, Kyoto, Japan. The forest consists mostly of mōsō bamboo (Phyllostachys edulis) and has several pathways for tourists and visitors. The Ministry of the Environment considers it a part of the soundscape of Japan.[1]
+
+        Prior to 2015, there was a charge to access the forest.[2]
+        The forest is not far from Tenryū-ji temple, which is the location of Rinzai School, and the famous Nonomiya Shrine.The region experiences unpredictable weather, with a cool climate and bright sunlight. The summers are short, hot, and mostly cloudy. The winters are cold, windy, and partly cloudy. It is also wet year-round. Over the course of the year, the temperature typically ranges from 32 °F (0 °C) to 89 °F (32 °C). The summers last for approximately two months, from late June until mid-September, with an average daily high temperature above 80 °F (27 °C). The winters last for approximately three months, from early December to mid-March, with an average daily high temperature below 53 °F (12 °C)</p></div>
+        <button id="downloadButton">Description Download</button>
+
+<script>
+document.getElementById("downloadButton").addEventListener("click", function() {
+    const code = `{
+ Prior to 2015, there was a charge to access the forest.[2]
+        The forest is not far from Tenryū-ji temple, which is the location 
+        of Rinzai School, and the famous Nonomiya Shrine.The region experiences unpredictable 
+        weather, with a cool climate and bright sunlight. The summers are short, hot, and mostly cloudy.
+         The winters are cold, windy, and partly cloudy. It is also wet year-round. Over the course of the year, 
+         the temperature typically ranges from 32 °F (0 °C) to 89 °F (32 °C). The summers l
+         last for approximately two months, from late June until mid-September, with an average 
+         daily high temperature above 80 °F (27 °C). The winters last for approximately three months,
+          from early December to mid-March, with an average daily high temperature below 53 °F (12 °C)
+}`;
+
+    const blob = new Blob([code], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "settings.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+});
+</script>
+
+    </div>
+</body>
+</html>

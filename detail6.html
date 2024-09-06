@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="row p-3">
+       <div class="col-md-6"> <img src="../IMAGES/pic 24.jpg" alt="wonder"  style="width: 100%; height: 95%;"></div>
+       <div class="col-md-6"><h1>WEST FACADE</h1>
+        <div class="col-md-6"><h6>description</h6>
+    <p style="width: 600px;">The western façade is the result of innovative architecture in its time. Its style reflects a regular rhythm of horizontal and vertical lines. Large portals welcome visitors into Notre-Dame Cathedral, while the square towers house the bells.
+
+        Construction of the western facade began in 1200 under Bishop de Sully and continued with Bishop Guillaume d’Auvergne, counselor and confessor of Saint Louis. It ended with the construction of the north tower in 1240 and the south tower in 1250. The west façade has several functions: it is the point of entry for visitors, the entrance of western light, it houses and diffuses the sound of the bells in the towers.
+        
+        The western façade is based on a set of vertical lines (four buttresses and two towers) and horizontal (portals, gallery of kings, bays, columns). Its imposing dimensions are a technological feat for the time: 43.5 meters wide and 45 meters high, measuring 69 meters with the towers. The harmonious simplicity of the façade’s proportions inspired the architect Le Corbusier to speak of a pure creation of the spirit managed by the square and the circle, hence its geometric purity. The square symbolizes the rational world, the limited space, while the circle symbolizes the spiritual state, the limitless, the divine.</p></div>
+        <button id="downloadButton">Description Download</button>
+
+<script>
+document.getElementById("downloadButton").addEventListener("click", function() {
+    const code = `{
+  Construction of the western facade began in 1200 under Bishop de Sully and continued with Bishop Guillaume d’Auvergne, counselor and confessor of Saint Louis. It ended with the construction of the north tower in 1240 and the south tower in 1250. The west façade has several functions: it is the point of entry for visitors, the entrance of western light, it houses and diffuses the sound of the bells in the towers.
+        
+        The western façade is based on a set of vertical lines (four buttresses and two towers) 
+        and horizontal (portals, gallery of kings, bays, columns). Its imposing dimensions are a
+         technological feat for the time: 43.5 meters wide and 45 meters high, measuring 69 meters with the towers
+         . The harmonious simplicity of the façade’s proportions inspired the architect Le Corbusier to speak of a pure
+          creation of the spirit managed by the square and the circle, hence its geometric purity. The square symbolizes
+           the rational world, the limited space, while the circle symbolizes the spiritual state, the limitless, the divine.
+}`;
+
+    const blob = new Blob([code], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "settings.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+});
+</script>
+
+    </div>
+</body>
+</html>

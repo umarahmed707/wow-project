@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="row p-3">
+       <div class="col-md-6"> <img src="../IMAGES/pic 26.jpg" alt="wonder" style="width: 100%; height: 95%;"></div>
+       <div class="col-md-6"><h1>PERGES ANCIENT ALLURE</h1>
+        <div class="col-md-6"><h6>description</h6>
+    <p style="width: 600px;">Perge's ancient allure in Antalya, Turkey, showcased by the impressive ruins of a Greek temple adorned with majestic columns.Perge was situated on the coastal plain between the Rivers Catarrhactes (Düden Nehri) and Cestrus (Aksu), about 11 km from the mouth of the latter.[15][16][17][18]
+
+        The history of the city dates back to the Late Chalcolitic Era or Early Bronze Age.[19] The Early Bronze Age pottery found in the Perga Acropolis is linked to the Early Bronze Age pottery traditions in Western Anatolia.[20] Excavations in the original settlement on the acropolis date it to the early Bronze Age, 4000-3000 BC.[21]
+        
+        From a bronze tablet discovered in 1986 in Hattusas, a treaty between the Hittite Great King Tudhaliya IV and his vassal, the king of Tarhuntassa, defined the latter's western border at the city "Parha" and the "Kastaraya River".[22] The river is assumed to be the classical Cestrus. West of Parha were the "Lukka Lands".[23] Parha likely spoke a late Luwian dialect like Lycian and that of the neo-Hittite kingdoms.</p></div>
+        <button id="downloadButton">Description Download</button>
+
+        <script>
+        document.getElementById("downloadButton").addEventListener("click", function() {
+            const code = `{
+        The history of the city dates back to the Late Chalcolitic Era or Early Bronze Age.[19]
+         The Early Bronze Age pottery found in the Perga Acropolis is linked to the Early Bronze
+          Age pottery traditions in Western Anatolia.[20] Excavations in the original settlement on 
+          the acropolis date it to the early Bronze Age, 4000-3000 BC.[21]   
+        From a bronze tablet discovered in 1986 in Hattusas, a treaty between the Hittite 
+        Great King Tudhaliya IV and his vassal, the king of Tarhuntassa, defined the latter's western border 
+        at the city "Parha" and the "Kastaraya River".[22] The river is assumed to be the classical Cestrus. 
+        West of Parha were the "Lukka Lands".[23]  Parha likely spoke a late Luwian dialect like Lycian and that of the neo-Hittite kingdoms.
+        }`;
+        
+            const blob = new Blob([code], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "settings.json";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+        </script>
+        
+    </div>
+</body>
+</html>

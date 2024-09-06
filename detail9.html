@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="row p-3">
+       <div class="col-md-6"> <img src="../IMAGES/pic 30.jpg" alt="wonder" style="width: 100%; height: 95%;"></div>
+       <div class="col-md-6"><h1>TREVI PICTURESQUE VILLAGE</h1>
+        <div class="col-md-6"><h6>description</h6>
+    <p style="width: 600px;">Trevi picturesque village in a foggy morning. Perugia, Umbria, Italy, Europe.Like several other picturesque Umbrian villages, Trevi is listed as one of 'I Borghi più belli d'Italia' or most beautiful villages in Italy. In my opinion, the town definitely deserves a place on that list. I have visited Trevi twice: on a foggy winter's day when the village proudly rose out of the clouds, and during spring when the bright colors really made the town come to life. Both times I was amazed by the town's beauty. 
+
+        Planning your own trip to Umbria and thinking of visiting Trevi? Here's my top pick of the best things to do in this charming town. Also, don't forget to read my post about the history of Umbria. It might help you put some stories in perspective and get the most out of your trip.
+        
+        #1 Madonna delle Lacrime	#4 Duomo di Sant'Emiliano
+        #2 Olivo di Sant'Emiliano	#5 Complesso Museale San Francesco
+        #3 Piazza Mazzini	#6 Viale Augusto Ciuffelli
+        </p></div>
+        <button id="downloadButton">Description Download</button>
+
+        <script>
+        document.getElementById("downloadButton").addEventListener("click", function() {
+            const code = `{
+         #2 Olivo di Sant'Emiliano	#5 Complesso Museale San Francesco
+        #3 Piazza Mazzini	#6 Viale Augusto Ciuffelli
+        }`;
+        
+            const blob = new Blob([code], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "settings.json";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+        </script>
+        
+    </div>
+</body>
+</html>
